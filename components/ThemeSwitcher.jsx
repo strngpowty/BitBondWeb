@@ -10,6 +10,7 @@ function ThemeSwitcher() {
             <option value="valentine">🎀 Theme-Valentine</option>
             <option value="coffee">🔮 Theme-Coffee</option>
             <option value="nord">🎐 Theme-Nord</option>
+            <option value="cyberpunk">👾 Theme-Cyberpunk</option>
         </select>
     )
 }

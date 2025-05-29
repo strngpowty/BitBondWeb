@@ -2,9 +2,9 @@ import ThemeSwitcher from "../components/ThemeSwitcher"
 function Navbar() {
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm">
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl">⌬BitBond</a>
+      <div className="navbar bg-base-300 shadow-sm">
+        <div className="flex-1 bg-base-700 ">
+          <a className="btn text-xl border-2 border-primary">⌬BitBond</a>
         </div>
         <div className="flex gap-2">
           <div className="dropdown dropdown-end">
