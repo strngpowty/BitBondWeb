@@ -1,25 +1,55 @@
+import axios from "axios";
+import { useState } from "react";
 function Login() {
+  const [ emailId, setEmail ] = useState("");
+  const [ password, setPassword ] = useState("");
+  const handleChange = async () => {
+    try {
+      const res = await axios.post("http://localhost:3000/login", {
+        emailId,
+        password,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
-    <>
-      <div className="card bg-base-100 w-96 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-          />
-        </figure>
+    <div className="flex justify-center items-center flex-grow">
+      <div className="card bg-base-300 w-96 shadow-sm">
         <div className="card-body">
-          <h2 className="card-title">Card Title</h2>
-          <p>
-            A card component has a figure, a body part, and inside body there
-            are title and actions parts
-          </p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+          <div>
+            <fieldset className="fieldset">
+              <legend className="fieldset-legend text-base">Email</legend>
+              <input
+                value={emailId}
+                type="text"
+                className="input"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </fieldset>
+            <fieldset className="fieldset mb-5">
+              <legend className="fieldset-legend text-base">Password</legend>
+              <input
+                value={password}
+                type="password"
+                className="input"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </fieldset>
+          </div>
+          <div className="card-actions justify-center">
+            <button
+              className="btn btn-primary text-base"
+              onClick={() => handleChange()}
+            >
+              Login
+            </button>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
