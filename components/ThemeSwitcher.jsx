@@ -1,18 +1,39 @@
+import { useState } from "react";
+
 function ThemeSwitcher() {
-    const changeTheme = (e) => {
-        document.documentElement.setAttribute("data-theme", e.target.value)
-    }
-    return (
-        <select className="select select-bordered w-full max-w-xs" onChange={changeTheme}>
-            <option value="halloween">🦇 Theme-Halloween</option>
-            <option value="luxury">⚜️ Theme-Luxury</option>
-            <option value="black">🕸️ Theme-Black</option>
-            <option value="valentine">🎀 Theme-Valentine</option>
-            <option value="coffee">🔮 Theme-Coffee</option>
-            <option value="nord">🎐 Theme-Nord</option>
-            <option value="cyberpunk">👾 Theme-Cyberpunk</option>
-        </select>
-    )
+  const themes = [
+    { label: "🦇 Theme-Halloween", value: "halloween" },
+    { label: "⚜️ Theme-Luxury", value: "luxury" },
+    { label: "🕸️ Theme-Black", value: "black" },
+    { label: "🎀 Theme-Valentine", value: "valentine" },
+    { label: "🔮 Theme-Coffee", value: "coffee" },
+    { label: "🎐 Theme-Nord", value: "nord" },
+    { label: "👾 Theme-Cyberpunk", value: "cyberpunk" },
+  ];
+
+  const [currentTheme, setCurrentTheme] = useState(themes[0]);
+
+  const changeTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme.value);
+    setCurrentTheme(theme);
+  };
+
+  return (
+    <div className="dropdown dropdown-bottom w-full max-w-xs">
+      <div tabIndex={0} className="btn btn-outline border-primary w-full truncate">
+        {currentTheme.label}
+      </div>
+      <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-full max-w-xs">
+        {themes.map((theme) => (
+          <li key={theme.value}>
+            <button onClick={() => changeTheme(theme)} className="truncate">
+              {theme.label}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default ThemeSwitcher;
