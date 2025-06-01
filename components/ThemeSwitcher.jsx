@@ -26,7 +26,7 @@ function ThemeSwitcher() {
       <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-full max-w-xs">
         {themes.map((theme) => (
           <li key={theme.value}>
-            <button onClick={() => changeTheme(theme)} className="truncate">
+            <button onClick={() => {document.activeElement?.blur(); changeTheme(theme)}} className="truncate">
               {theme.label}
             </button>
           </li>
