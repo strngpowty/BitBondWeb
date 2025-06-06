@@ -1,8 +1,9 @@
+import EditProfile from './EditProfile'
 function Login () {
     return (
-        <>
-            <h1>Profile</h1>
-        </>
+        <div className="flex-grow flex justify-center items-center mb-13">
+            <EditProfile />
+        </div>
     )
 }
 

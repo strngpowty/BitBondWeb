@@ -49,7 +49,6 @@ function Navbar() {
               <li>
                 <Link to="/profile" className="justify-between" onClick={() => document.activeElement?.blur()}>
                   Profile
-                  <span className="badge">New</span>
                 </Link>
               </li>
               <li>

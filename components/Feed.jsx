@@ -22,7 +22,7 @@ const Feed = () => {
   }, [])
   return (
     <>
-    <UserCard />
+    <UserCard feed0 = {feed?.[0]}/>
     </>
   );
 };
