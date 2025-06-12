@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BASE_URL } from "../utils/contants";
 import axios from "axios";
-import { addUser } from "../utils/userSlice";
 
 function EditProfile() {
-  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  console.log("user", user);
   const [formData, setFormData] = useState({
     password: "",
     age: "",

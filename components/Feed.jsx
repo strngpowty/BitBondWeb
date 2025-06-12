@@ -29,6 +29,7 @@ const Feed = () => {
     getFeed();
   }, []);
   return (
+<<<<<<< HEAD
     <div className="flex-grow flex justify-center items-center pb-20">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <button className="btn btn-default w-full md:w-auto" onClick={handlePass}>Pass</button>
@@ -36,6 +37,11 @@ const Feed = () => {
         <button className="btn btn-default w-full md:w-auto" onClick={handleLike}>Like</button>
       </div>
     </div>
+=======
+    <>
+    <UserCard feed0 = {feed?.[0]}/>
+    </>
+>>>>>>> abdc0b4ad4c93c6589e93418b4f0234ec5147179
   );
 };
 export default Feed;
