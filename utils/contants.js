@@ -1,1 +1,32 @@
 export const BASE_URL = "http://localhost:3000"
+
+export const FEED_MESSAGE = [
+  "🕵️‍♂️ Nothing to see here... just a lonely feed waiting for love and server responses.",
+  "🥲 Your feed is emptier than my fridge on a Sunday night.",
+  "👀 Still loading... or maybe your feed just ghosted you.",
+  "🤷‍♀️ No feed here. Maybe it's on a coffee break.",
+  "🦗 Just crickets... and your thoughts echoing in here.",
+  "📭 This feed is as empty as my motivation on Monday mornings.",
+  "🧙‍♂️ Feed has vanished! Must be a bug... or a wizard.",
+  "💾 If (feed === null) { panic(); }",
+  "🚀 Waiting for data like it's a SpaceX launch... T-minus who knows.",
+  "📡 Feed not found. Maybe it's stuck in a Git merge conflict.",
+  "🕳️404: Feed not found. Try turning it off and on again?",
+  "🧃 Still squeezing the data from the backend fruit. Stay juicy.",
+  "🐒 Your feed ran off to join the circus. It'll be back… maybe.",
+  "🦄 No feed here, but if you believe hard enough, one might appear.",
+  "🥔 This feed is more empty than my brain during math class.",
+  "🚫 Nothing here yet—unless you count my bad decisions.",
+  "🪦 Your feed died of boredom. Please revive with new data.",
+  "😼 Feed not found. A cat probably knocked it off the table.",
+  "🐾 Your feed is hiding under the bed. Try luring it out with treats.",
+  "🐱 No feed... but plenty of judgmental cat stares.",
+  "🎮 Your feed failed to spawn. Try respawning it!",
+  "🕹️ Feed loading... please insert more quarters.",
+  "💣 Your feed was fragged. Game over. Try again?",
+  "🪐 Your feed took a wrong turn at the multiverse.",
+  "🧻 Still waiting for the backend to stop scrolling on TikTok.",
+  "🍕 No feed, but hey—have a slice of pizza and chill.",
+  "🧠 Feed empty. So is my ability to pretend everything’s fine.",
+  "🦕 Still waiting... The data is being delivered by a polite dinosaur."
+];

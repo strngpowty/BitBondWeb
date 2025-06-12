@@ -8,14 +8,25 @@ import UserCard from "./UserCard";
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
   const dispatch = useDispatch();
-  const handlePass = () => {
-
-  }
-  const handleLike =() => {
-
-  }
+  const handlePass = async (userid) => {
+    const res = await axios.post(
+      BASE_URL + `/request/send/ignored/${userid}`,
+      {},
+      { withCredentials: true }
+    );
+    console.log(res);
+    getFeed();
+  };
+  const handleLike = async (userid) => {
+    const res = await axios.post(
+      BASE_URL + `/request/send/interested/${userid}`,
+      {},
+      { withCredentials: true }
+    );
+    console.log(res);
+    getFeed();
+  };
   const getFeed = async () => {
-    if (feed) return;
     try {
       const res = await axios.get(BASE_URL + "/feed", {
         withCredentials: true,
@@ -28,20 +39,27 @@ const Feed = () => {
   useEffect(() => {
     getFeed();
   }, []);
-  return (
-<<<<<<< HEAD
+  console.log(feed);
+  return feed?.[0] ? (
     <div className="flex-grow flex justify-center items-center pb-20">
       <div className="flex flex-col md:flex-row items-center gap-4">
-        <button className="btn btn-default w-full md:w-auto" onClick={handlePass}>Pass</button>
+        <button
+          className="btn btn-default w-full md:w-auto"
+          onClick={() => handlePass(feed?.[0]._id)}
+        >
+          Pass
+        </button>
         <UserCard feed0={feed?.[0]} />
-        <button className="btn btn-default w-full md:w-auto" onClick={handleLike}>Like</button>
+        <button
+          className="btn btn-default w-full md:w-auto"
+          onClick={() => handleLike(feed?.[0]._id)}
+        >
+          Like
+        </button>
       </div>
     </div>
-=======
-    <>
-    <UserCard feed0 = {feed?.[0]}/>
-    </>
->>>>>>> abdc0b4ad4c93c6589e93418b4f0234ec5147179
+  ) : (
+    <p>{`💾 If (feed === null) { panic(); }`}</p>
   );
 };
 export default Feed;
