@@ -47,13 +47,24 @@ function Navbar() {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link to="/profile" className="justify-between" onClick={() => document.activeElement?.blur()}>
-                  Profile
-                  <span className="badge">New</span>
+                <Link to="/" className="justify-between" onClick={() => document.activeElement?.blur()}>
+                  Feed
                 </Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link to="/profile" className="justify-between" onClick={() => document.activeElement?.blur()}>
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <Link to="/connections" className="justify-between" onClick={() => document.activeElement?.blur()}>
+                  Connections
+                </Link>
+              </li>
+              <li>
+                <Link to="/receivedRequests" className="justify-between" onClick={() => document.activeElement?.blur()}>
+                  Requests
+                </Link>
               </li>
               <li>
                 <a onClick={() => {document.activeElement?.blur(); handleLogout()}}>Logout</a>

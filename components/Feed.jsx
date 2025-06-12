@@ -8,22 +8,34 @@ import UserCard from "./UserCard";
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
   const dispatch = useDispatch();
+  const handlePass = () => {
+
+  }
+  const handleLike =() => {
+
+  }
   const getFeed = async () => {
     if (feed) return;
     try {
-      const res = await axios.get(BASE_URL + "/feed", {withCredentials: true});
+      const res = await axios.get(BASE_URL + "/feed", {
+        withCredentials: true,
+      });
       dispatch(addFeed(res.data));
     } catch (err) {
-        console.log(err)
+      console.log(err);
     }
   };
   useEffect(() => {
-    getFeed()
-  }, [])
+    getFeed();
+  }, []);
   return (
-    <>
-    <UserCard />
-    </>
+    <div className="flex-grow flex justify-center items-center pb-20">
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <button className="btn btn-default w-full md:w-auto" onClick={handlePass}>Pass</button>
+        <UserCard feed0={feed?.[0]} />
+        <button className="btn btn-default w-full md:w-auto" onClick={handleLike}>Like</button>
+      </div>
+    </div>
   );
 };
 export default Feed;
