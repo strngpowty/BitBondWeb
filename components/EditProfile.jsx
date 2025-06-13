@@ -4,6 +4,7 @@ import { BASE_URL } from "../utils/contants";
 import axios from "axios";
 
 function EditProfile() {
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   console.log("user", user);
   const [formData, setFormData] = useState({

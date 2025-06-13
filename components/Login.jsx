@@ -22,10 +22,14 @@ function Login() {
       console.log(err)
     }
   };
+  const handleSignUp = async() => {
+    return navigate("/signup")
+  }
   return (
     <div className="flex justify-center items-center flex-grow">
       <div className="card bg-base-300 w-96 shadow-sm">
         <div className="card-body">
+          <p className="flex justify-end cursor-pointer" onClick={() => handleSignUp()}>Sign-up instead?</p>
           <div>
             <fieldset className="fieldset">
               <legend className="fieldset-legend text-base">Email</legend>
@@ -55,7 +59,7 @@ function Login() {
             >
               Login
             </button>
-          </div>
+          </div>          
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { BASE_URL } from "../utils/contants";
+import { BASE_URL, FEED_MESSAGE } from "../utils/contants";
 import { addFeed } from "../utils/feedSlice";
 import { useEffect } from "react";
 import UserCard from "./UserCard";
@@ -59,7 +59,13 @@ const Feed = () => {
       </div>
     </div>
   ) : (
-    <p>{`💾 If (feed === null) { panic(); }`}</p>
+    <div className="flex-grow flex justify-center items-center pb-20">
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <p className="flex-grow flex justify-center items-center pb-20">
+          {FEED_MESSAGE[Math.floor(Math.random() * FEED_MESSAGE.length)]}
+        </p>
+      </div>
+    </div>
   );
 };
 export default Feed;
