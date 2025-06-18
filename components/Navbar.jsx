@@ -22,7 +22,6 @@ function Navbar() {
     }
   }
   return (
-    <>
       <div className="navbar bg-base-300 shadow-sm">
         <div className="flex-1 bg-base-700 ">
           <Link to="/" className="btn text-xl border-2 border-primary">⌬BitBond</Link>
@@ -76,7 +75,6 @@ function Navbar() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 export default Navbar;
