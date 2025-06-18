@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { BASE_URL } from "../utils/contants";
 import axios from "axios";
-import { addUser } from "../utils/userSlice";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstname: "",
     lastName: "",
@@ -43,11 +42,7 @@ function SignUp() {
         withCredentials: true,
       });
       if (res.status === 200) {
-        const updatedUser = await axios.get(BASE_URL + "/profile/view", {
-          withCredentials: true,
-        });
-        dispatch(addUser(updatedUser.data));
-        console.log(updatedUser.data);
+        navigate("/login")
       }
     } catch (err) {
       console.error(err);
