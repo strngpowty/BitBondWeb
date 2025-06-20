@@ -30,3 +30,58 @@ export const FEED_MESSAGE = [
   "🧠 Feed empty. So is my ability to pretend everything’s fine.",
   "🦕 Still waiting... The data is being delivered by a polite dinosaur."
 ];
+
+export const REQUESTS_MESSAGE = [
+  "📭 No requests. Even the bots are ignoring you.",
+  "👻 So quiet here, you'd think it was haunted.",
+  "🧍 Just you and your perfectly symmetrical social life.",
+  "🪞 Still waiting... but hey, at least you're popular with yourself!",
+  "🚫 No new requests. Not even a scammer pretending to be a prince.",
+  "🦗 It’s just you, the silence, and a cricket or two.",
+  "📡 Broadcasting your vibes... no one's tuned in yet.",
+  "💌 You’ve got... nothing. Zero. Zilch.",
+  "🧊 Your inbox is chillier than the Arctic right now.",
+  "👀 Nope, not even an accidental friend request.",
+  "🎭 Everyone’s busy... pretending they didn’t see your profile.",
+  "🪶 Your request list is lighter than a feather in space.",
+  "📉 Your popularity graph just flatlined.",
+  "🐕 Still no requests, but your dog would definitely connect with you.",
+  "📵 All quiet on the request front. Social drought continues.",
+  "💃 Waiting for invites like it's prom night all over again.",
+  "🪑 This section is emptier than the last row at a Monday meeting.",
+  "🎈 No connections yet, but look on the bright side: no drama either!",
+  "🔍 We checked twice. Nope, still nobody reaching out.",
+  "🎣 Throwing out social bait... still no bites.",
+  "🛎️ Nobody's rung your social doorbell yet.",
+  "🧃 No requests, but your vibe? Immaculate.",
+  "🥹 Waiting for connection requests like it’s a text from your crush.",
+  "📅 Marking another day in the calendar of 'No New Requests'.",
+  "🧘 No requests. Just inner peace. And maybe mild concern."
+];
+
+export const CONNECTIONS_MESSAGE = [
+  "🧍‍♂️ It’s just you here… but hey, you're great company.",
+  "🤝 No connections yet, but the world is full of potential besties.",
+  "📡 You’re broadcasting good vibes — just waiting on a reply.",
+  "🦸‍♂️ Even heroes start their journey alone. Connections will come.",
+  "🚶 No one's joined your journey yet, but the path is wide open.",
+  "🪁 You’re flying solo — for now.",
+  "🧊 Your connections are on ice. Warm them up with a few requests!",
+  "🪞 Mirror time: your only connection is… yourself. And that’s deep.",
+  "🛸 Still searching the galaxy for like-minded lifeforms.",
+  "📖 Your connection story is a blank page. Time to write chapter one.",
+  "🧙‍♀️ Alone, but with great power (and no notifications).",
+  "🎨 Your social canvas is blank — start painting friendships!",
+  "🥽 Exploring the friend zone... but like, literally alone.",
+  "🍃 No connections yet — but you're totally giving main character energy.",
+  "🔍 You haven’t connected with anyone, but someone might be watching 👀",
+  "🪴 No connections, but you’re growing on your own. Respect.",
+  "🎯 No connections, but your aim is true. Go make some noise!",
+  "🏕️ You’re the first camper. The rest of the crew is coming soon.",
+  "🚫 You haven’t added anyone yet. Let’s change that?",
+  "🗺️ Your map is empty. Start exploring some profiles!",
+  "📭 Connection inbox: Zero. Motivation to mingle: Hopefully increasing.",
+  "🎢 Still at the beginning of your social rollercoaster.",
+  "⏳ Just waiting for the connection stars to align.",
+  "🎈 No one’s here yet, but at least the air is fresh."
+];

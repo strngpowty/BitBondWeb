@@ -29,9 +29,15 @@ function Body() {
 
   return (
     <>
+    <div className="">
       <Navbar />
+    </div>
+    <div className="flex flex-grow overflow-auto py-4">      
       <Outlet />
+    </div>
+    <div className="">      
       <Footer />
+    </div>
     </>
   );
 }

@@ -41,7 +41,7 @@ const Feed = () => {
   }, []);
   console.log(feed);
   return feed?.[0] ? (
-    <div className="flex-grow flex justify-center items-center pb-20">
+    <div className="flex-grow flex justify-center items-center">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <button
           className="btn btn-default w-full md:w-auto"
@@ -59,11 +59,19 @@ const Feed = () => {
       </div>
     </div>
   ) : (
-    <div className="flex-grow flex justify-center items-center pb-20">
-      <div className="flex flex-col md:flex-row items-center gap-4">
-        <p className="flex-grow flex justify-center items-center pb-20">
-          {FEED_MESSAGE[Math.floor(Math.random() * FEED_MESSAGE.length)]}
-        </p>
+    <div className="flex-grow flex justify-center items-center">
+      <div className="card shadow-lg bg-base-300 border border-base-300 animate-fade-in w-full max-w-md">
+        <div className="card-body items-center text-center">
+          <div className="text-5xl animate-bounce">🦗</div>
+          <h2 className="card-title text-lg font-semibold">
+            {FEED_MESSAGE[Math.floor(Math.random() * FEED_MESSAGE.length)]}
+          </h2>
+          <p className="text-sm text-base-content/70">
+            Feeds will appear here when the universe aligns (or your server
+            responds).
+          </p>
+          <div className="badge badge-ghost mt-4">Nothing yet...</div>
+        </div>
       </div>
     </div>
   );

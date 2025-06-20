@@ -49,24 +49,26 @@ function SignUp() {
     }
   };
 
+  const handleLogin = () => {
+    navigate("/login")
+  }
+
   const formFields = [
-    { name: "firstName", type: "text", placeholder: "First Name" },
-    { name: "lastName", type: "text", placeholder: "Last Name" },
-    { name: "emailId", type: "text", placeholder: "Email ID" },
+    { name: "firstName", type: "text", placeholder: "First Name*" },
+    { name: "lastName", type: "text", placeholder: "Last Name*" },
+    { name: "emailId", type: "text", placeholder: "Email ID*" },
     { name: "gender", type: "text", placeholder: "Gender" },
     { name: "photoURL", type: "text", placeholder: "Photo URL" },
-    { name: "password", type: "password", placeholder: "Password" },
+    { name: "password", type: "password", placeholder: "Password*" },
     { name: "age", type: "number", placeholder: "Age" },
     { name: "about", type: "text", placeholder: "About" },
     { name: "skills", type: "text", placeholder: "Skills (comma separated)" },
   ];
 
   return (
-    <div className="flex justify-center items-center flex-grow">
-      <div className="card bg-base-300 w-80 shadow-sm pl-5 pr-5 pt-2 pb-4 rounded-xl">
-        <h1 className="flex-grow flex justify-center items-center text-2xl">
-          Profile
-        </h1>
+    <div className="m-auto w-full max-w-sm">
+      <div className="card bg-base-300 w-full shadow-sm pl-5 pr-5 pt-2 pb-4 rounded-xl">
+        <p className="flex justify-end cursor-pointer text-sm my-4" onClick={() => handleLogin()}>Already Have an Account?</p>
         <form className="pt-5" onSubmit={handleSubmit}>
           {formFields.map(({ name, type, placeholder }) => (
             <fieldset className="fieldset" key={name}>
@@ -81,7 +83,7 @@ function SignUp() {
             </fieldset>
           ))}
 
-          <div className="flex-grow flex justify-center items-center pt-5">
+          <div className=" flex justify-center items-center pt-5">
             <button className="btn btn-primary text-base" type="submit">
               Submit
             </button>
