@@ -57,12 +57,7 @@ function SignUp() {
     { name: "firstName", type: "text", placeholder: "First Name*" },
     { name: "lastName", type: "text", placeholder: "Last Name*" },
     { name: "emailId", type: "text", placeholder: "Email ID*" },
-    { name: "gender", type: "text", placeholder: "Gender" },
-    { name: "photoURL", type: "text", placeholder: "Photo URL" },
     { name: "password", type: "password", placeholder: "Password*" },
-    { name: "age", type: "number", placeholder: "Age" },
-    { name: "about", type: "text", placeholder: "About" },
-    { name: "skills", type: "text", placeholder: "Skills (comma separated)" },
   ];
 
   return (

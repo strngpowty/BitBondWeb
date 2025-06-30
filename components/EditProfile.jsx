@@ -13,7 +13,7 @@ function EditProfile() {
     age: "",
     about: "",
     skills: [],
-    photoURL: "",
+    photo: null,
   });
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -24,31 +24,43 @@ function EditProfile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Create a shallow copy to avoid mutating state directly
-      const dataToSend = { ...formData };
-      // If password is empty, remove it from the object
-      if (!dataToSend.password) {
-        delete dataToSend.password;
+      const form = new FormData();
+
+      if (formData.password) form.append("password", formData.password);
+      if (formData.age) form.append("age", formData.age);
+      if (formData.about) form.append("about", formData.about);
+
+      if (formData.skills.length > 0) {
+        if (typeof formData.skills === "string") {
+          formData.skills
+            .split(",")
+            .map((s) => s.trim())
+            .forEach((skill) => form.append("skills", skill));
+        } else {
+          formData.skills.forEach((skill) => form.append("skills", skill));
+        }
       }
-      if (typeof dataToSend.skills === "string") {
-        dataToSend.skills = dataToSend.skills
-          .split(",")
-          .map((skill) => skill.trim());
-      }
-      const res = await axios.patch(BASE_URL + "/profile/edit", dataToSend, {
+
+      if (formData.photo) form.append("photo", formData.photo); // 👈 file append
+
+      const res = await axios.patch(`${BASE_URL}/profile/edit`, form, {
         withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
+
       if (res.status === 200) {
-        const updatedUser = await axios.get(BASE_URL + "/profile/view", {
-          withCredentials : true,
+        const updatedUser = await axios.get(`${BASE_URL}/profile/view`, {
+          withCredentials: true,
         });
-        dispatch(addUser(updatedUser.data))
-        console.log(user)
+        dispatch(addUser(updatedUser.data));
       }
     } catch (err) {
-      console.log(err);
+      console.log("Error submitting form", err);
     }
   };
+
   useEffect(() => {
     if (user) {
       setFormData({
@@ -67,17 +79,24 @@ function EditProfile() {
         Profile
       </h1>
       <form className="pt-5" onSubmit={(e) => handleSubmit(e)}>
-        <fieldset className="fieldset">
-          <legend className="text-lg">Photo URL</legend>
+        <div className="form-control w-full mb-4">
+          <label
+            htmlFor="photo-upload"
+            className="btn btn-outline btn-primary w-full"
+          >
+            {"Upload Profile Photo"}
+          </label>
           <input
-            name="photoURL"
-            value={formData.photoURL}
-            type="text"
-            className="input"
-            placeholder="Photo URL"
-            onChange={(e) => handleChange(e)}
+            id="photo-upload"
+            type="file"
+            name="photo"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, photo: e.target.files[0] }))
+            }
           />
-        </fieldset>
+        </div>
         <fieldset className="fieldset">
           <legend className="text-lg">Password</legend>
           <input
