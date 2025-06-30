@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { BASE_URL } from "../utils/contants";
 import axios from "axios";
 import { addUser } from "../utils/userSlice";
+import { InfoAlert } from "./Alert";
 
 function EditProfile() {
   const dispatch = useDispatch();
