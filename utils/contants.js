@@ -1,4 +1,4 @@
-export const BASE_URL = "/api/"
+export const BASE_URL = "/api"
 
 export const FEED_MESSAGE = [
   "🕵️‍♂️ Nothing to see here... just a lonely feed waiting for love and server responses.",
